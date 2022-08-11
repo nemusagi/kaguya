@@ -1,24 +1,83 @@
-# README
+## users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :posts
+- has_one_attached :counts
+- has_many :favorites
 
-* System dependencies
+## counts テーブル
 
-* Configuration
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+|user          | references | null: false, foreign_key: true |
+|count         | integer    | null: false                    |
 
-* Database creation
+### Association
 
-* Database initialization
+-  belongs_to :user
 
-* How to run the test suite
+## posts テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| title            | string     | null: false                    |
+| text             | text       | null: false                    |
+| type_id          | integer    | null: false                    |
+| disclosure_range | boolean    | null: false                    |
+| genre_id         | integer    | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
-* Deployment instructions
 
-* ...
+
+### Association
+
+- belongs_to :user
+- has_many : post_tags
+- has_many :favorites
+
+
+## posts テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| post_id          | references | null: false, foreign_key: true |
+| tag_id           | references | null: false, foreign_key: true |
+
+
+
+### Association
+
+- belongs_to :post
+- belongs_to :tag
+
+## tags テーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+
+### Association
+
+- has_many : post_tags
+
+
+## favorites テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| post_id          | references | null: false, foreign_key: true |
+| user_id          | references | null: false, foreign_key: true |
+
+
+
+### Association
+
+- belongs_to :post
+- belongs_to :user
