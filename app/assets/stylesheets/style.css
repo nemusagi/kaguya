@@ -1,0 +1,79 @@
+div.contents.row h2 {
+  margin: 20px 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+div.contents.row h2 strong {
+  font-weight: bold;
+  padding-right: 5px;
+  font-size: 1.2em;
+}
+
+div.contents.row .new_user {
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input,
+form textarea {
+  width: 500px;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  background-color: #57C3E9;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #84d3ef;
+}
+
+.field {
+  width: 500px;
+}
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+
+.comments {
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.comments a {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin: 30px auto;
+  padding: 10px;
+  color: #D8D8D8;
+}
+
+footer p {
+  text-align: center;
+}
