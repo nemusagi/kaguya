@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   }
   get 'top/index'
   root to: 'top#index'
+  resources :post, only: [ :new, :create ]
 end
