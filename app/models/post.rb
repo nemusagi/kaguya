@@ -2,20 +2,18 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many_attached :images
 
-  include LiberalEnum
 
-  enum type: { :illust, :text }
-  liberal_enum :type
-  enum genre: { :original, :fanart }
-  liberal_enum :genre
+  enum kind: [ :illust, :text ]
+
+  enum genre: [ :original, :fanart ]
 
 
   validates :title, presence: true
   validates :text, presence: true, unless: :was_attached?
   def was_attached?
-    self.image.attached?
+    self.images.attached?
   end
-  validates :type, inclusion: { in: Post.types.keys }
-  validates :type, inclusion: { in: Post.types.keys }
+  validates :kind, inclusion: { in: Post.kinds.keys }
+  validates :genre, inclusion: { in: Post.genres.keys }
   validates :is_published, inclusion: [true, false]
 end
