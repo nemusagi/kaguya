@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+<div class= "main">
+  <% if  current_user.id == @user.id %>
+    <div class= "part-img">
+      <%= "#{@user.nickname}さんのマイページ" %>
+      <div class= ">
+        <%= render  partial: 'posts/post', collection: @posts %>
+    </div>
+  <% else %> 
+    <% "#{@user.nickname}さんのページ" %> 
+    <%= render  partial: 'posts/post', collection: @posts %>
+  <% end %>
+</div>
