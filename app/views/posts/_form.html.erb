@@ -1,0 +1,58 @@
+<div class= 'post-form'>
+  <div class="post-form-main">
+  </div>
+  <%= form_with(model: post, local: true) do |f| %>
+
+    
+    <%# 投稿内容 %>
+    <div class="edit-posts">
+      <div class="weight-bold-text">
+        タイトル
+      </div>
+      <%= f.text_area :title, class:"posts-title", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40", rows:"1" %>
+      <div class="text-form">
+        <div class="weight-bold-text">
+          文章
+        </div>
+        <%= f.text_area :text, class:"posts-text", id:"item-info", placeholder:"文章" ,rows:"10" %>
+      </div>
+      <div class="image-field">
+        <div class="weight-bold-text">
+          画像
+        </div>
+        <div id="previews"></div>
+        <div class="click-upload">
+          <%= f.file_field :images, name: 'post[images][]', class:"posts-images", data: {index: 0} %>
+        </div>
+      </div>
+      <div class="kind-form">
+        <div class="weight-bold-text">
+          種類
+        </div>
+        <%= f.label :kind, "イラスト" %>
+        <%= f.radio_button :kind, :illust, class:"posts-kind" %><br>
+        <%= f.label :kind, "文章" %>
+        <%= f.radio_button :kind, :text, class:"posts-kind" %>       
+      </div>
+       <div class="published-form">
+        <div class="weight-bold-text">
+          自分以外にも公開しますか？
+        </div>
+        <%= f.check_box :is_published %>
+        <%= f.label :is_published, "公開する" %>
+      </div>
+      <div class="genre-form">
+        <div class="weight-bold-text">
+          ジャンル
+        </div>
+        <%= f.label :genre, "オリジナル" %>        
+        <%= f.radio_button :genre, :original, class:"posts-genre" %><br>
+        <%= f.label :genre, "FAや二次創作" %>
+        <%= f.radio_button :genre, :fanart, class:"posts-genre" %>
+       
+      </div>
+    </div>
+    <%= f.submit "SEND" %>
+  <% end %>
+
+</div>
