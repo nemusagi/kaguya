@@ -1,0 +1,11 @@
+
+  <div class='card'>
+    <%= link_to post.title, "#", class: "card-title" %>
+    <%= link_to image_tag(post.images[0].variant(resize: '150x100'), class: "card__img"), "#" if post.images.attached? %>
+    <% if post.text != nil %>
+      <div class= "card-text">
+        <%= post.text.truncate(50) %>
+      </div>
+    <% end %>
+    <%= link_to post.user.nickname, user_path(post.user_id), class: "card-user" %>
+  </div>

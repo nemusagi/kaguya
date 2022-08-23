@@ -1,2 +1,23 @@
 <%= render "shared/header" %>
-<h1>トップページ</h1>
+<div class="top-main">
+  <h1>トップページ</h1>
+  <% if user_signed_in? %>
+    <div class= "posts">
+        <%= render  partial: 'posts/post', collection: @posts %>
+      </div>
+      <div class= "pagenation">
+        <%= paginate @posts %>
+      </div>
+    </div>
+    <%= link_to(new_post_path, class: 'post-btn') do %>
+      <span class='post-btn-text'>投稿する</span>
+      <%= image_tag 'brush.png' , size: '185x50' ,class: "post-btn-icon" %>
+    <% end %>
+  <% else %>
+    <div class="introduction">
+      <div class="intro-text">貴方だけの創造力で、月に行こう。</div>
+      <%= link_to "ログイン", new_user_session_path, class: 'log-in' %>
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+    </div> 
+  <% end %> 
+</div>
