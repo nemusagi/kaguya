@@ -1,13 +1,30 @@
 <%= render "shared/header" %>
 <div class= "main">
   <% if  current_user.id == @user.id %>
-    <div class= "part-img">
-      <%= "#{@user.nickname}さんのマイページ" %>
-      <div class= ">
+    <div class= "posts-wrapper">
+      <%#= image_tag "moon.jpg", class: "moon-img1" %>
+      <div class= "page-title">
+        <%= "#{@user.nickname}さんのマイページ" %>
+      </div>
+      <div class= "posts">
         <%= render  partial: 'posts/post', collection: @posts %>
+      </div>
+      <div class= "pagenation">
+        <%= paginate @posts %>
+      </div>
+      <%= link_to(new_post_path, class: 'post-btn') do %>
+        <span class='post-btn-text'>投稿する</span>
+        <%= image_tag 'brush.png' , size: '185x50' ,class: "post-btn-icon" %>
+      <% end %>      
     </div>
   <% else %> 
-    <% "#{@user.nickname}さんのページ" %> 
-    <%= render  partial: 'posts/post', collection: @posts %>
+    <% "#{@user.nickname}さんのページ" %>
+    <div class= "posts"> 
+      <%= render  partial: 'posts/post', collection: @posts %>
+    </div>
+    <div class= "pagenation">
+     <%= paginate @posts %>
+    </div>
   <% end %>
+  
 </div>

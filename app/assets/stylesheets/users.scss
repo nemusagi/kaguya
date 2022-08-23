@@ -1,10 +1,26 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.part-img {
-  height: 1000px;
+
+.part-img1 {
+  height: calc(1200px / 6);
   background-image: image-url('moon.jpg');
   background-repeat:  no-repeat; 
   background-position:center bottom;
-  background-size:contain
+  background-size:cover;
+
+}
+
+.part-img2 {
+  height:  calc(1200px / 6 * 2);
+  background-image: image-url('moon.jpg');
+  background-repeat:  no-repeat; 
+  background-position: center bottom;
+}
+
+.part-img3 {
+  height:  calc(1200px / 6 * 3);
+  background-image: image-url('moon.jpg');
+  background-repeat:  no-repeat; 
+  background-position: center bottom;
 }
