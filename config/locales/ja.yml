@@ -13,3 +13,14 @@ ja:
       genre:
         original: オリジナル
         fanart: FA・二次創作
+
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      post:
+        title: タイトル
+        text: 文章
+        images: 画像
+        kind: 種類
+        genre: ジャンル

@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   def was_attached?
     self.images.attached?
   end
-  validates :kind, inclusion: { in: Post.kinds.keys }
-  validates :genre, inclusion: { in: Post.genres.keys }
+  validates :kind, inclusion: { in: Post.kinds.keys, message:'を選択してください' }
+  validates :genre, inclusion: { in: Post.genres.keys, message:'を選択してください' }
   validates :is_published, inclusion: [true, false]
 end
