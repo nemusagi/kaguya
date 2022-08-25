@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="show-title">
+      <%= @post.title %>
+    </h2>
+    <div class="post-imgs-content">
+      <%= image_tag @post.images[0], class: "image1" if @post.images.attached? %>
+    </div>
+
+    <% if @post.text != nil %>
+      <div class="post-text-box">
+        <span><%= safe_join(@post.text.split("\n"),tag(:br)) %></span>
+      </div>
+    <% end %>
+    <div class="post-date">
+      <%= l @post.created_at, format: :short %>
+    </div>
+    <div class="post-user-box">
+        <span>by  <%= link_to @post.user.nickname, user_path(@post.user), class: "user-page-link" %></span>
+      </div>
+    <div class="post-kind">
+      タイプ：<%= @post.kind_i18n %>
+    </div>
+    <div class="post-genre">
+      ジャンル：<%= @post.genre_i18n %>
+    </div>
+  </div>
+      <% if current_user.id == @post.user_id %>
+        <%= link_to "編集",  edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
+      <% end %>
+</div>

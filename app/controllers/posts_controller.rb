@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
-  
+  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :move_to_index, only:  [ :edit, :update, :destroy ]
   def new
     @post = Post.new
   end
@@ -13,7 +14,27 @@ class PostsController < ApplicationController
     else
       render :new
     end   
-  end  
+  end
+  
+  def show
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to user_path(current_user.id)
+  end
 
   private
 
@@ -21,5 +42,15 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :title, :text, :kind, :is_published, :genre, {images: []}
     ).merge( user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    unless  current_user.id ==  @post.user_id
+      redirect_to root_path
+    end
   end
 end

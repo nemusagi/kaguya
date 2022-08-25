@@ -1,0 +1,15 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%Y/%m/%d"
+
+  enums:
+    post:
+      kind:
+        text: 文章
+        illust: 絵
+
+      genre:
+        original: オリジナル
+        fanart: FA・二次創作
