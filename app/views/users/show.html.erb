@@ -18,7 +18,9 @@
       <% end %>      
     </div>
   <% else %> 
-    <% "#{@user.nickname}さんのページ" %>
+    <div class= "page-title">
+      <%= "#{@user.nickname}さんのページ" %>
+    </div>
     <div class= "posts"> 
       <%= render  partial: 'posts/post', collection: @posts %>
     </div>
