@@ -24,3 +24,4 @@ ja:
         images: 画像
         kind: 種類
         genre: ジャンル
+        is_published: 公開設定
