@@ -5,9 +5,8 @@
     <div class= "posts">
         <%= render  partial: 'posts/post', collection: @posts %>
       </div>
-      <div class= "pagenation">
-        <%= paginate @posts %>
-      </div>
+    <div class= "pagenation">
+      <%= paginate @posts %>
     </div>
     <%= link_to(new_post_path, class: 'post-btn') do %>
       <span class='post-btn-text'>投稿する</span>

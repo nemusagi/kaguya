@@ -17,6 +17,9 @@ class PostsController < ApplicationController
   end
   
   def show
+    if @post.is_published == false && @post.user != current_user
+        redirect_to root_path
+    end
   end
 
   def edit

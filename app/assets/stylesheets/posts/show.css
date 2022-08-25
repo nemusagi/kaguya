@@ -30,4 +30,6 @@
 .post-text-box {
   max-height: 600px;
   overflow-y: scroll;
+  width: 90%;
+  max-width: 94vw;
 }

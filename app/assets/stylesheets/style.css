@@ -47,6 +47,8 @@ a {
 }
 
 
+
+
 .posts {
   width: 90%;
   max-width: 900px;
@@ -116,6 +118,11 @@ header {
   justify-content: space-between;
 }
 
+.pagenation {
+  height: min-content;
+  width: 300px;
+
+}
 .logo {
   width: 130px;
   font-size: 40px;
