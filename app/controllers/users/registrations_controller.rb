@@ -3,8 +3,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
   after_action :create_count, only: [:create]
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -39,11 +39,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
-
-    def create_count
+  # protected 
+  private
+  def create_count
+    if current_user != nil
       Count.create(user_id: current_user.id, counts: 0)
     end
+  end 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
