@@ -2,7 +2,7 @@
   <div class="post-form-main">
   </div>
   <%= form_with(model: post, local: true) do |f| %>
-
+     <%= render 'shared/error_messages', model: f.object %>
     
     <%# 投稿内容 %>
     <div class="edit-posts">
