@@ -29,9 +29,9 @@
 | ---------------- | ---------- | ------------------------------ |
 | title            | string     | null: false                    |
 | text             | text       | null: false                    |
-| type_id          | integer    | null: false                    |
-| disclosure_range | boolean    | null: false                    |
-| genre_id         | integer    | null: false                    |
+| kind             | integer    | null: false                    |
+| is_published     | boolean    | null: false                    |
+| genre            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 
