@@ -1,6 +1,12 @@
 .top-main {
   width: 100vw;
-  height: 1200px;
-  background-color: rgb(26, 94, 137);
-
+  min-height: 1200px;
+  background-image: image-url('top_view.jpg');
+  background-repeat:  no-repeat; 
+  background-position:center;
+  background-size:cover;
+  margin-top: 0px;
+}
+.top_posts {
+  padding-top: 540px;
 }
