@@ -26,10 +26,14 @@
     <div class="post-genre">
       ジャンル：<%= @post.genre_i18n %>
     </div>
+    <div class="fav-star">
+      <i class="fa-regular fa-star"></i>
+    </div>
   </div>
-      <% if current_user.id == @post.user_id %>
+    <% if current_user.id == @post.user_id %>
+      <div class="edit-or-delete">
         <%= link_to "編集",  edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
-        <p class="or-text">or</p>
         <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
-      <% end %>
+      </div>
+    <% end %>
 </div>
