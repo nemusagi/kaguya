@@ -32,7 +32,7 @@ https://kaguya-38242.herokuapp.com/
 習慣化アプリには、継続日数による変化や達成時に表示するメッセージなど習慣化を支援する機能がついているものが多く存在する。それらを参考に、投稿への反応を内蔵しているアプリケーションを開発することでより創作活動に特化した習慣化・継続支援を可能にしたいと考えた。
 
 # 洗い出した要件
-[要件定義署](https://docs.google.com/spreadsheets/d/1mojok8HZ5spvU1tEXFK5xIMEqjrF-elAvwWyh7W8rqs/edit#gid=982722306)
+[要件定義書](https://docs.google.com/spreadsheets/d/1mojok8HZ5spvU1tEXFK5xIMEqjrF-elAvwWyh7W8rqs/edit#gid=982722306)
 
 # 実装した機能について
 
@@ -51,11 +51,11 @@ https://kaguya-38242.herokuapp.com/
 
 
 # 開発環境
-・フロントエンド：HTML, CSS, JavaScript
-・バックエンド： Ruby
-・インフラ：Heroku
-・テスト：RSpec
-・テキストエディタ：VSCode
+・フロントエンド：HTML, CSS, JavaScript  
+・バックエンド： Ruby  
+・インフラ：Heroku  
+・テスト：RSpec  
+・テキストエディタ：VSCode  
 ・タスク管理：Trello
 
 
