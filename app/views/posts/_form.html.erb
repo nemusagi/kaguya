@@ -9,12 +9,13 @@
       <div class="weight-bold-text">
         タイトル
       </div>
-      <%= f.text_area :title, class:"posts-title", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40", rows:"1" %>
+      <%= f.text_area :title, class:"posts-title", id:"posts-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40", rows:"1" %>
       <div class="text-form">
         <div class="weight-bold-text">
           文章
         </div>
-        <%= f.text_area :text, class:"posts-text", id:"item-info", placeholder:"文章" ,rows:"10" %>
+        <%= f.text_area :text, class:"posts-text", id:"posts_text", placeholder:"文章" ,rows:"10" %>
+        <div class="count_chara", id="count_chara">0文字</div>
       </div>
       <div class="image-field">
         <div class="weight-bold-text">
