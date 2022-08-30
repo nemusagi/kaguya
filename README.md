@@ -9,10 +9,10 @@ kaguya
 https://kaguya-38242.herokuapp.com/
 
 # テスト用アカウント
-・Basic認証パスワード：
-・Basic認証ID：
-・メールアドレス：
-・パスワード：
+・Basic認証パスワード：12seconds2
+・Basic認証ID：pyon
+・メールアドレス：1ringithub@gmail.com
+・パスワード：01nemuup
 
 # 利用方法
 
