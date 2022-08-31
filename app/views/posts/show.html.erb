@@ -8,7 +8,14 @@
     <div class="post-imgs-content">
       <%= image_tag @post.images[0], class: "image1" if @post.images.attached? %>
     </div>
-
+    <div class="other-images">
+      <% @post.images[1..-1].each do |image| if @post.images.attached? %>
+        <div class="other-image">
+          <%= image_tag image,  class: "other-img" %>
+        </div>
+      <%end%>
+    </div>
+    <% end %>
     <% if @post.text != nil %>
       <div class="post-text-box">
         <span><%= safe_join(@post.text.split("\n"),tag(:br)) %></span>

@@ -27,6 +27,17 @@
   max-height: 1200px;
 }
 
+.other-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.other-img {
+  max-height: 300px;
+  object-fit: contain;
+}
 .post-text-box {
   max-height: 600px;
   overflow-y: scroll;

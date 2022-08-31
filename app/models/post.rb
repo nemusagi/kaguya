@@ -16,4 +16,6 @@ class Post < ApplicationRecord
   validates :kind, inclusion: { in: Post.kinds.keys, message:'を選択してください' }
   validates :genre, inclusion: { in: Post.genres.keys, message:'を選択してください' }
   validates :is_published, inclusion: [true, false]
+  validates :images, length: { maximum: 5, message: "は1枚以上5枚以下にしてください" }
+
 end
