@@ -15,7 +15,8 @@
       <%= link_to(new_post_path, class: 'post-btn') do %>
         <span class='post-btn-text'>投稿する</span>
         <%= image_tag 'brush.png' , size: '185x50' ,class: "post-btn-icon" %>
-      <% end %>      
+      <% end %>
+      <%= link_to "お気に入り一覧", user_favorites_path(current_user.id), class:"fav-link" %>      
     </div>
   <% else %> 
     <div class= "page-title">

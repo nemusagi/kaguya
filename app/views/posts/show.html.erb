@@ -8,13 +8,14 @@
     <div class="post-imgs-content">
       <%= image_tag @post.images[0], class: "image1" if @post.images.attached? %>
     </div>
-    <div class="other-images">
-      <% @post.images[1..-1].each do |image| if @post.images.attached? %>
-        <div class="other-image">
-          <%= image_tag image,  class: "other-img" %>
-        </div>
-      <%end%>
-    </div>
+    <% if @post.images.attached? %>
+      <div class="other-images">
+        <% @post.images[1..-1].each do |image| %>
+          <div class="other-image">
+            <%= image_tag image,  class: "other-img" %>
+          </div>
+        <% end %>
+       </div>
     <% end %>
     <% if @post.text != nil %>
       <div class="post-text-box">
@@ -33,14 +34,21 @@
     <div class="post-genre">
       ジャンル：<%= @post.genre_i18n %>
     </div>
-    <div class="fav-star">
-      <i class="fa-regular fa-star"></i>
-    </div>
-  </div>
+
+    <% if @post.favorited?(current_user) %>
+      <%= link_to post_favorites_path(@post.id), method: :delete, class:"fav-star" do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+    <% else %>
+      <%= link_to post_favorites_path(@post.id), method: :post do %>
+        <i class="fa-regular fa-star"></i>
+      <% end %>
+    <% end %>
     <% if current_user.id == @post.user_id %>
       <div class="edit-or-delete">
         <%= link_to "編集",  edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
         <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
       </div>
     <% end %>
+  </div>
 </div>
