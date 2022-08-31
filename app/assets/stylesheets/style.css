@@ -46,7 +46,10 @@ a {
   width: 100%
 }
 
-
+.fav-link {
+  text-decoration: none;
+  color: #fff;
+}
 .posts {
   width: 90%;
   max-width: 900px;
@@ -171,9 +174,7 @@ header {
   color: #e8ebb2;
   text-decoration: none;
 }
-.lists-right {
 
-}
 .logout,
 .user-nickname,
 .login,

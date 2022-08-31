@@ -1,3 +1,4 @@
+
 .post-show {
   background-color: #f8f8f8;
   width: 100vw;
@@ -45,12 +46,16 @@
   max-width: 94vw;
 }
 
-.fav-star {
-  width: 70px;
-  height: 50px;
-  cursor: pointer;
-  text-align: center;
+.fav-link {
+  text-decoration: none;
+  color: aliceblue;
 }
 .fa-regular fa-star {
   margin: 0 auto;
+  text-decoration: none;
+}
+
+.fa-solid fa-star {
+  text-decoration: none;
+  color: rgb(255, 222, 35);
 }

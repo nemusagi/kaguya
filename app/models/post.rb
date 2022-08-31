@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many_attached :images
-
+  has_many :favorites, dependent: :destroy
 
   enum kind: [ :illust, :text ]
 
@@ -18,4 +18,7 @@ class Post < ApplicationRecord
   validates :is_published, inclusion: [true, false]
   validates :images, length: { maximum: 5, message: "は1枚以上5枚以下にしてください" }
 
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
